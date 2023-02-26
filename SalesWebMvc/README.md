@@ -37,7 +37,7 @@ git clone https://github.com/Andershowrj/Sistema_de_vendas_MVC.git
 
 - Execute o comando dotnet run para executar o sistema de vendas.
 
-- Abra um navegador e acesse o endereço http://localhost:5000 para acessar o sistema de vendas.
+- Abra um navegador e acesse o endereço http://localhost:7101 para acessar o sistema de vendas.
 
 ### Conclusão
 

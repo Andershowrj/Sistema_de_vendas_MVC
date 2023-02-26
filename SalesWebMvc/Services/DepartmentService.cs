@@ -4,6 +4,7 @@ namespace SalesWebMvc.Services
 {
     public class DepartmentService
     {
+        //estrutura de dependencia com o _context do EF
         private readonly SalesWebMvcContext _context;
         public DepartmentService(SalesWebMvcContext context)
         {
