@@ -1,7 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-//using SalesWebMvc.Data;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
 using SalesWebMvc.Models;
 using SalesWebMvc.Services;
 
@@ -11,7 +12,6 @@ builder.Services.AddDbContext<SalesWebMvcContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("SalesWebMvcContext"),
     builder => builder.MigrationsAssembly("SalesWebMvc")));
 
-//builder.Services.AddScoped<SeedingService>();
 builder.Services.AddScoped<SellerService>();
 builder.Services.AddScoped<DepartmentService>();
 
@@ -21,12 +21,6 @@ builder.Services.AddControllersWithViews();
 //Cria a instancia do IServiceProvider
 var services = builder.Services.BuildServiceProvider();
 
-// pega a instancia do SeedingService do container
-//using (var scope = services.CreateScope())
-//{
-//    var seedingService = scope.ServiceProvider.GetService<SeedingService>();
-//    //seedingService.Seed();
-//}
 
 var app = builder.Build();
 
@@ -37,6 +31,16 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
+var enUS = new CultureInfo("en-US");
+var localizationOptions = new RequestLocalizationOptions
+{
+    DefaultRequestCulture = new RequestCulture(enUS),
+    SupportedCultures = new List<CultureInfo> { enUS },
+    SupportedUICultures = new List<CultureInfo> { enUS }
+};
+
+app.UseRequestLocalization(localizationOptions);
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
