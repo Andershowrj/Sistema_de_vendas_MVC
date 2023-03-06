@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Sales Records";
+}
+
+<h2>@ViewData["Title"]</h2>
+<div class="row">
+    <div class="col-md-4">
+        <form class="list-group-horizontal" asp-action="SimpleSearch">
+            <fieldset>
+                <legend>Simple search</legend>
+                <label for="MinDate" class="col-lg-2 form-control-lg">MinDate</label>
+                <div class="col-lg-10">
+                    <input type="date" name="MinDate" class="form-control" />
+                </div>
+                <label for="MaxDate" class="col-lg-2 form-control-lg">MaxDate</label>
+                <div class="col-lg-10">
+                    <input type="date" name="MaxDate" class="form-control" />
+                </div>
+                <br />
+                <div class="col-lg-10 col-lg-offset-2">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <form class="list-group-horizontal" asp-action="GroupingSearch">
+            <fieldset>
+                <legend>Grouping search</legend>
+                <label for="MinDate" class="col-lg-2 form-control-lg">MinDate</label>
+                <div class="col-lg-10">
+                    <input type="date" name="MinDate" class="form-control" />
+                </div>
+                <label for="MaxDate" class="col-lg-2 form-control-lg">MaxDate</label>
+                <div class="col-lg-10">
+                    <input type="date" name="MaxDate" class="form-control" />
+                </div>
+                <br />
+                <div class="col-lg-10 col-lg-offset-2">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
