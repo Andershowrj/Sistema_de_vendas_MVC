@@ -1,15 +1,15 @@
 ﻿@model IEnumerable<SalesWebMvc.Models.Department>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Departments";
 }
 
-<h1>Index</h1>
+<h2>@ViewData["Title"]</h2>
 
 <p>
     <a asp-action="Create" class="btn btn-success">Create New</a>
 </p>
-<table class="table">
+<table class="table table-striped">
     <thead>
         <tr>
             <th>
