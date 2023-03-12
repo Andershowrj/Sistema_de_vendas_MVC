@@ -14,7 +14,8 @@
             <input type="date" class="form-control" name="minDate" value=@ViewData["MinDate"] />
             <label for="maxDate">Data máxima:</label>
             <input type="date" class="form-control" name="maxDate" value=@ViewData["MaxDate"] />
-            <button type="submit" class="btn btn-primary">Filtrar</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a asp-action="Index" class="btn btn-secondary">Back</a>
         </form>
     </div>
 </nav>
